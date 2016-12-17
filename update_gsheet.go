@@ -50,8 +50,8 @@ func AuthGSpreadsheet(key, delegate string) (srv *sheets.Service, err error) {
 	return srv, nil
 }
 
-// Example function that will update spreadsheet (sheetId) with myval values.
-// More info on how to use the sheeis API can be found here:
+// updateGSpreadsheet is an example function that will update spreadsheet (sheetId) 
+// with myval values. More info on how to use the sheets API can be found here:
 // https://developers.google.com/sheets/api/
 func updateGSpreadsheet(srv *sheets.Service) error {
 	var vr sheets.ValueRange
