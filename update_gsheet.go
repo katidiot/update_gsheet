@@ -11,7 +11,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"golang.org/x/oauth2"
+	"golang.org/x/net/context"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"
 )
@@ -43,7 +43,7 @@ func AuthGSpreadsheet(key, delegate string) (srv *sheets.Service, err error) {
 	}
 	// Impersonate user
 	conf.Subject = delegate
-	srv, err = sheets.New(conf.Client(oauth2.NoContext))
+	srv, err = sheets.New(conf.Client(context.Background()))
 	if err != nil {
 		return nil, err
 	}
